@@ -4,7 +4,7 @@ A simple recursive sudoku solver written in Rust.
 
 ## Usage
 ```bash
- cargo run -- [file_path] [number_of_solutions]
+cargo run -- [file_path] [number_of_solutions]
  ```
  
  ##### Example
