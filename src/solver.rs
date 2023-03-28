@@ -62,7 +62,6 @@ pub fn solve_sudoku(grid: &mut [[u8; 9]; 9], num_sol: u32, counter: &mut u32) {
     }
 
     *counter += 1;
-    dbg!(counter);
 
     println!("{:?}", grid[0]);
     println!("{:?}", grid[1]);
