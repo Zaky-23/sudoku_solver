@@ -9,7 +9,7 @@ cargo run -- [file_path] [number_of_solutions]
  
  ##### Example
  ``` bash
- cargo run -- testing/input.txt 1
+ cargo run -- input.txt 1
  ```
  
  ##### Example Input
