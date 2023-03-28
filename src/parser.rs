@@ -1,17 +1,18 @@
 use std::{
     env,
+    fs::File,
     io::Read,
-    fs::File, process::exit
+    process::exit
 };
 
-static  HELP: &str = r#"
+const HELP: &'static str = r#"
 usage: sdkuslv [FILE_PATH] [NUMBER_OF_SOLUTIONS]
 where:
-	FILE_PATH				file that contains the input
-							values must be seperated using commas
-							or any character that qualifies as whitespace
+	FILE_PATH		file that contains the input
+				values must be seperated using commas
+				or any character that qualifies as whitespace
 
-	NUMBER_OF_SOLUTIONS		will output the first `n` solutions if they exist
+	NUMBER_OF_SOLUTIONS	will output the first `n` solutions if they exist
 "#;
 
 pub fn parse_args() -> (String, u32){
@@ -21,7 +22,7 @@ pub fn parse_args() -> (String, u32){
 
 	if args.len() == 1 {
 		println!(
-			"invalid command: missing arguments `file_path` `number of solutions`"
+			"invalid command: missing arguments; `file_path` `number of solutions`"
 		);
 		exit(0);
 	}

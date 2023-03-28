@@ -62,16 +62,35 @@ pub fn solve_sudoku(grid: &mut [[u8; 9]; 9], num_sol: u32, counter: &mut u32) {
     }
 
     *counter += 1;
-    dbg!(counter);
 
-    println!("{:?}", grid[0]);
-    println!("{:?}", grid[1]);
-    println!("{:?}", grid[2]);
-    println!("{:?}", grid[3]);
-    println!("{:?}", grid[4]);
-    println!("{:?}", grid[5]);
-    println!("{:?}", grid[6]);
-    println!("{:?}", grid[7]);
-    println!("{:?}", grid[8]);
-    println!();
+    print_grid(grid);
+}
+
+fn print_grid(grid: &[[u8; 9]; 9]) {
+    let mut x = 0;
+    let mut y = 0;
+
+    loop {
+        print!("{} ", grid[y][x]);
+
+        x+= 1;
+
+        if x == 9 {
+            println!();
+            x = 0;
+            y += 1;
+        }
+
+        if y == 9 {
+            break;
+        }
+
+        if x == 3 || x == 6 {
+            print!("| ");
+        }
+
+        if (y == 3 || y == 6) && x == 0 {
+            println!("=====================");
+        }
+    }
 }
