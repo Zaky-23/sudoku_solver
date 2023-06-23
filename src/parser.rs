@@ -5,16 +5,6 @@ use std::{
     process::exit
 };
 
-const HELP: &'static str = r#"
-usage: sdkuslv [FILE_PATH] [NUMBER_OF_SOLUTIONS]
-where:
-	FILE_PATH		file that contains the input
-				values must be seperated using commas
-				or any character that qualifies as whitespace
-
-	NUMBER_OF_SOLUTIONS	will output the first `n` solutions if they exist
-"#;
-
 pub fn parse_args() -> (String, u32){
     let args: Vec<String> = env::args().collect();
     let file_name;
@@ -24,11 +14,6 @@ pub fn parse_args() -> (String, u32){
 		println!(
 			"invalid command: missing arguments; `file_path` `number of solutions`"
 		);
-		exit(0);
-	}
-
-	if args[1].to_ascii_lowercase() == "--help" || args[1].to_ascii_lowercase() == "--h" {
-		println!("{}", HELP);
 		exit(0);
 	}
 

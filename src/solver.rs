@@ -46,8 +46,7 @@ pub fn solve_sudoku(grid: &mut [[u8; 9]; 9], num_sol: u32, counter: &mut u32) {
                 grid[y][x] = val;
                 // Branch off and solve for the new grid state
                 solve_sudoku(grid, num_sol, counter);
-                // Undo the change when it returns
-                // and backtrack
+                // Undo the change when it returns; backtrack 
                 grid[y][x] = 0;
             }
 
@@ -55,8 +54,8 @@ pub fn solve_sudoku(grid: &mut [[u8; 9]; 9], num_sol: u32, counter: &mut u32) {
                 exit(0)
             }
 
-            // When there is no possible values left,
-            // badcktrack
+            // When there is no possible values left aka
+            // backtracking
             return;
         }
     }
